@@ -1,0 +1,24 @@
+{
+    "sections": {
+        "hero": {
+            "type": "hero-slider",
+            "settings": {
+                "title": "Bem-vindo a Vitrine",
+                "button_label": "Ver Produto"
+            }
+        },
+        "products": {
+            "type": "collection-product-list",
+            "settings": {
+                "title": "Destaques"
+            }
+        },
+        "cta": {
+            "type": "final-cta",
+            "settings": {
+                "button_text": "Compre agora"
+            }
+        }
+    },
+    "order": ["hero", "products", "cta"]
+}
