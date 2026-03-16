@@ -1,5 +1,8 @@
 {{ 'hero-slider.css' | asset_url | stylesheet_tag }}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 
 {% assign product_handle = section.settings.product %}
 {% assign product = all_products[product_handle] %}
@@ -7,90 +10,96 @@
 
 
 {% if list_products %}
+<div class="hero-slider-full">
+  <div class="swiper myHeroSwiper">
+    <div class="swiper-wrapper">
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-/>
+      {% for product_with_banner in list_products %}
 
-<div class="swiper">
-  <div class="swiper-wrapper">
-    {% for product_with_banner in list_products %}
-      {% assign banner = product_with_banner.banner %}
-      {% assign product_b_handle = product_with_banner.produto %}
-      {% assign product_b = all_products[product_b_handle] %}
-      
-      
-    <div class="swiper-slide">
-      <a href="{{ product_b.url }}">
+        {% assign banner = product_with_banner.banner %}
+        {% assign product_b_handle = product_with_banner.produto %}
+        {% assign product_b = all_products[product_b_handle] %}
+        
+        <div class="swiper-slide">
+          <div class="container-banner">
+           
+            <img class="banner-img" src="{{ banner | image_url: width: 1800 }}" alt="Banner">
+            
+            
+            <div class="banner-content">
 
-        <div class="container-banner">
-        <img class="banner-img" src="{{ banner |  image_url: width: '1200px'  }}">
+              <h2 class="banner-title">{{ section.settings.hero_title }}</h2>
+              <p class="banner-subtext">{{ section.settings.hero_subtitle }}</p>
+              
+              <a href="{{ product_b.url }}" class="banner-button">
+                {{ section.settings.button_text }}
+              </a>
+            </div>
 
-        <img class="produto-img" src="{{ product_b.featured_image | image_url: width: '400px' }}">
+            
+            <img class="produto-float-img" src="{{ product_b.featured_image | image_url: width: 500 }}" alt="{{ product_b.title }}">
+            
+            <div class="banner-overlay"></div>
+          </div>
         </div>
-        <h2>{{ product_b.title }}</h2>
-        </a>
+      {% endfor %}
     </div>
-     {% endfor %}
     
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
-  
-  <div class="swiper-pagination"></div>
-
-  
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  
-  <div class="swiper-scrollbar"></div>
 </div>
-    
-
-
 
 <script>
-  const swiper = new Swiper('.swiper', {
-  
-  direction: 'horizontal',
-  loop: true,
 
-  
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
- 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
+  window.addEventListener('load', function() {
+    new Swiper('.myHeroSwiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  });
 
 </script>
-
 {% endif %}
 
 {% schema %}
-
-  {
-    "name": "hero-slider",
-    "settings": [{
-        "type": "product",
-        "id": "product",
-        "label": "Product"
-        
+{
+  "name": "Hero Slider",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Selecione o Produto"
+    },
+    {
+      "type": "header",
+      "content": "Configurações de Texto"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Título do Slider",
+      "default": "LoGold"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subtitle",
+      "label": "Texto de Apoio",
+      "default": "Confira os melhores produtos da nossa coleção premium."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto do Botão",
+      "default": "SAIBA MAIS"
     }
   ],
-    "presets": [
-
-    ]
-  }
-
+  "presets": [
+    {
+      "name": "Hero Slider Principal"
+    }
+  ]
+}
 {% endschema %}
