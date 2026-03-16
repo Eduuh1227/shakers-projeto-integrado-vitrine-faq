@@ -32,9 +32,17 @@
         "texto_botao": "Ver produto",
         "link_produto": "serum-corporal-ouro"
       }
+    },
+    "header_navigation_x8Pz6x": {
+      "type": "header-navigation",
+      "name": "Menu de Navegação",
+      "settings": {
+        "menu": "main-menu"
+      }
     }
   },
   "order": [
+    "header_navigation_x8Pz6x",
     "hero",
     "products",
     "cta"
