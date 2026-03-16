@@ -12,9 +12,9 @@
     "hero": {
       "type": "hero-slider",
       "settings": {
-        "product": "locao-royal-glow-moisturizer",
+        "product": "serum-corporal-ouro",
         "hero_title": "LoGold",
-        "hero_subtitle": "Confira os melhores produtos da nossa coleção premium.",
+        "hero_subtitle": "Sinta a suavidade de uma pele profundamente hidratada. Nossa fórmula exclusiva combina rápida absorção com uma fragrância envolvente que dura o dia todo.",
         "button_text": "SAIBA MAIS"
       }
     },
