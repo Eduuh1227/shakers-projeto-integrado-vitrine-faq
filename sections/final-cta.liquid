@@ -1,0 +1,40 @@
+{{ 'cta-final.css' | asset_url | stylesheet_tag }}
+
+<section class="cta-final">
+  <div class="cta-container">
+    
+    <h2 class="cta-title">Pronto para transformar sua rotina?</h2>
+    <p class="cta-text">Garanta o seu agora e sinta a diferença com a qualidade Shakers.</p>
+    
+   
+    {% if section.settings.link_produto != blank %}
+      <a href="{{ section.settings.link_produto.url }}" class="cta-button">
+        {{ section.settings.texto_botao }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CTA Final",
+  "settings": [
+    {
+      "type": "text",
+      "id": "texto_botao",
+      "label": "Texto do Botão",
+      "default": "Compre agora"
+    },
+    {
+      "type": "product",
+      "id": "link_produto",
+      "label": "Produto para o Botão"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Final"
+    }
+  ]
+}
+{% endschema %}
