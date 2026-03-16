@@ -1,0 +1,32 @@
+.swiper-slide {
+  text-align: center;
+  display: block;
+  width: 100%;
+  flex-direction: column;
+}
+
+  .swiper {
+  width: 800px;
+  height: 500px;
+}
+
+.container-banner {
+    position: relative;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.banner-img {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+}
+
+.produto-img {
+    position: absolute;
+    bottom: 0;             
+    left: 80%;
+    transform: translateX(-50%);
+    width: 200px;           
+    z-index: 2;
+}

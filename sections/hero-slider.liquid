@@ -1,0 +1,98 @@
+{{ 'hero-slider.css' | asset_url | stylesheet_tag }}
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+{% assign product_handle = section.settings.product %}
+{% assign product = all_products[product_handle] %}
+{% assign list_products = product.metafields.custom.list_banner_with_product.value %}
+
+
+{% if list_products %}
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {% for product_with_banner in list_products %}
+      {% assign banner = product_with_banner.banner %}
+      {% assign product_b_handle = product_with_banner.produto %}
+      {% assign product_b = all_products[product_b_handle] %}
+      
+      
+    <div class="swiper-slide">
+      <a href="{{ product_b.url }}">
+
+        <div class="container-banner">
+        <img class="banner-img" src="{{ banner |  image_url: width: '1200px'  }}">
+
+        <img class="produto-img" src="{{ product_b.featured_image | image_url: width: '400px' }}">
+        </div>
+        <h2>{{ product_b.title }}</h2>
+        </a>
+    </div>
+     {% endfor %}
+    
+  </div>
+  
+  <div class="swiper-pagination"></div>
+
+  
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  
+  <div class="swiper-scrollbar"></div>
+</div>
+    
+
+
+
+<script>
+  const swiper = new Swiper('.swiper', {
+  
+  direction: 'horizontal',
+  loop: true,
+
+  
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+ 
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+
+
+
+</script>
+
+{% endif %}
+
+{% schema %}
+
+  {
+    "name": "hero-slider",
+    "settings": [{
+        "type": "product",
+        "id": "product",
+        "label": "Product"
+        
+    }
+  ],
+    "presets": [
+
+    ]
+  }
+
+{% endschema %}
