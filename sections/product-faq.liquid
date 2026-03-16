@@ -1,29 +1,32 @@
-{{ 'product-faq.css' | asset_url |  stylesheet_tag }}
+{{ 'product-faq.css' | asset_url | stylesheet_tag }}
 
-{%- assign faq_list = product.metafields.custom.faq_do_produto.value -%}
+{% assign faq_list = product.metafields.custom.faq_do_produto.value %}
 
-{%- if faq_list != blank -%}
+{% if faq_list != blank %}
 
-  <section class="product-faq">
-    <h2>Perguntas Frequentes</h2>
+  <section class="product-faq-container">
+    <h2 class="faq-main-title">Perguntas Frequentes</h2>
     
-    <div class="faq-container">
-      {%- for item in faq_list -%}
+    <div class="faq-list">
+      {% for item in faq_list %}
 
-        <div class="faq-item">
-          <button class="faq-question">{{ item.pergunta }}</button>
-          <div class="faq-answer">
-            <p>{{ item.resposta }}</p>
+        <div class="faq-item-static">
+          <h3 class="faq-question-text">{{ item.pergunta }}</h3>
 
+          <div class="faq-answer-text">
+            {{ item.resposta | metafield_tag }}
           </div>
+
         </div>
-      {%- endfor -%}
+      {% endfor %}
     </div>
   </section>
-{%- endif -%}
+{% endif %}
+
 
 
 {% schema %}
+
 {
   "name": "FAQ do Produto",
   "settings": [],
@@ -33,4 +36,5 @@
     }
   ]
 }
+
 {% endschema %}

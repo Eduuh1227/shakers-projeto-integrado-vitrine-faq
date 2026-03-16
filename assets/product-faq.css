@@ -1,34 +1,38 @@
-.product-faq {
-  margin: 20px 0;
-  border-top: 1px solid #ddd;
+.product-faq-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-.faq-item {
-  border-bottom: 1px solid #ddd;
+.faq-main-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  text-align: left;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
+.faq-item-static {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
 }
 
-.faq-question::after {
-  content: '+';
+.faq-item-static:last-child {
+  border-bottom: none;
 }
 
-.faq-item.is-open .faq-question::after {
-  content: '-';
+.faq-question-text {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.faq-answer {
-  padding: 0 15px 15px;
+.faq-answer-text {
+  font-size: 1rem;
   color: #555;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+.faq-answer-text p {
+  margin: 0;
 }
