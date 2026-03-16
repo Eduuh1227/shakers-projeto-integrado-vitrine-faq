@@ -31,9 +31,5 @@
       }
     }
   },
-  "order": [
-    "hero",
-    "products",
-    "cta"
-  ]
+  "order": [ "hero","products","cta"]
 }

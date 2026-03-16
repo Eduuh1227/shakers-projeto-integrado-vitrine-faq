@@ -7,22 +7,15 @@
 
 <title>{{ shop.name }}</title>
 
-{{ 'theme.css' | asset_url | stylesheet_tag }}
-
 {{ content_for_header }}
 </head>
 
 <body>
 
-{% section 'header-navigation' %}
-
 <main>
 {{ content_for_layout }}
 </main>
 
-<script src="{{ 'hero-slider.js' | asset_url }}"></script>
-<script src="{{ 'add-to-cart.js' | asset_url }}"></script>
-<script src="{{ 'product-faq.js' | asset_url }}"></script>
 
 </body>
 </html>

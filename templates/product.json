@@ -18,8 +18,5 @@
       "settings": {}
     }
   },
-  "order": [
-    "product",
-    "faq"
-  ]
+  "order": [ "product","faq"]
 }
