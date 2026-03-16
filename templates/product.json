@@ -1,21 +1,11 @@
 {
-    "sections": {
-        "main": {
-            "type": "main-product",
-            "settings": {
-                "show_vendor": true,
-                "enable_sticky_info": true
-            }
-        },
-        "faq": {
-            "type": "product-faq",
-            "settings": {
-                "title": "Perguntas Frequentes"
-            }
-        }
+  "sections": {
+    "product": {
+      "type": "main-product"
     },
-    "order":[
-        "main",
-        "faq"
-    ]
+    "faq": {
+      "type": "product-faq"
+    }
+  },
+  "order": ["product","faq"]
 }

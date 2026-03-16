@@ -1,24 +1,14 @@
 {
-    "sections": {
-        "hero": {
-            "type": "hero-slider",
-            "settings": {
-                "title": "Bem-vindo a Vitrine",
-                "button_label": "Ver Produto"
-            }
-        },
-        "products": {
-            "type": "collection-product-list",
-            "settings": {
-                "title": "Destaques"
-            }
-        },
-        "cta": {
-            "type": "final-cta",
-            "settings": {
-                "button_text": "Compre agora"
-            }
-        }
+  "sections": {
+    "hero": {
+      "type": "hero-slider"
     },
-    "order": ["hero", "products", "cta"]
+    "products": {
+      "type": "collection-product-list"
+    },
+    "cta": {
+      "type": "final-cta"
+    }
+  },
+  "order": ["hero","products","cta"]
 }

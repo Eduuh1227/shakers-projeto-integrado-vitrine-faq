@@ -1,0 +1,34 @@
+.product-faq {
+  margin: 20px 0;
+  border-top: 1px solid #ddd;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-question::after {
+  content: '+';
+}
+
+.faq-item.is-open .faq-question::after {
+  content: '-';
+}
+
+.faq-answer {
+  padding: 0 15px 15px;
+  color: #555;
+  line-height: 1.5;
+}

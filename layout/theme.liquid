@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ shop.name }}</title>
 
-    {{ content_for_header }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ shop.name }}</title>
+
+{{ 'theme.css' | asset_url | stylesheet_tag }}
+
+{{ content_for_header }}
 </head>
+
 <body>
 
-    {% section 'header-navigation' %}
+{% section 'header-navigation' %}
 
-    {{ content_for_layout }}
+<main>
+{{ content_for_layout }}
+</main>
+
+<script src="{{ 'hero-slider.js' | asset_url }}"></script>
+<script src="{{ 'add-to-cart.js' | asset_url }}"></script>
+<script src="{{ 'product-faq.js' | asset_url }}"></script>
+
 </body>
 </html>
