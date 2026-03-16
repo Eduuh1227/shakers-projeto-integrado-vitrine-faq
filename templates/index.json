@@ -12,7 +12,10 @@
     "hero": {
       "type": "hero-slider",
       "settings": {
-        "product": "locao-royal-glow-moisturizer"
+        "product": "locao-royal-glow-moisturizer",
+        "hero_title": "LoGold",
+        "hero_subtitle": "Confira os melhores produtos da nossa coleção premium.",
+        "button_text": "SAIBA MAIS"
       }
     },
     "products": {
@@ -20,14 +23,14 @@
       "settings": {
         "title": "Loções",
         "main_product": "",
-        "all_collections": ""
+        "all_collections": "locoes"
       }
     },
     "cta": {
       "type": "final-cta",
       "settings": {
         "texto_botao": "Compre agora",
-        "link_produto": ""
+        "link_produto": "serum-corporal-ouro"
       }
     }
   },
