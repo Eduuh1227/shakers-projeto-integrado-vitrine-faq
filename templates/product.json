@@ -16,7 +16,18 @@
     "faq": {
       "type": "product-faq",
       "settings": {}
+    },
+    "header_navigation_hRT8qJ": {
+      "type": "header-navigation",
+      "name": "Menu de Navegação",
+      "settings": {
+        "menu": "main-menu"
+      }
     }
   },
-  "order": [ "product","faq"]
+  "order": [
+    "header_navigation_hRT8qJ",
+    "product",
+    "faq"
+  ]
 }

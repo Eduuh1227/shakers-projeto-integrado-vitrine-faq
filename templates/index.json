@@ -29,10 +29,22 @@
     "cta": {
       "type": "final-cta",
       "settings": {
-        "texto_botao": "Compre agora",
+        "texto_botao": "Ver produto",
         "link_produto": "serum-corporal-ouro"
+      }
+    },
+    "header_navigation_x8Pz6x": {
+      "type": "header-navigation",
+      "name": "Menu de Navegação",
+      "settings": {
+        "menu": "main-menu"
       }
     }
   },
-  "order": [ "hero","products","cta"]
+  "order": [
+    "header_navigation_x8Pz6x",
+    "hero",
+    "products",
+    "cta"
+  ]
 }
