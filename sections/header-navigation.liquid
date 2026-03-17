@@ -1,0 +1,42 @@
+{{ 'header-navigation.css' |  asset_url |  stylesheet_tag }}
+
+<nav class="custom-navigation">
+
+  <ul class="nav-list">
+
+    {% for link in section.settings.menu.links %}
+
+      <li class="nav-item">
+
+        <a href="{{ link.url }}" class="nav-link {% if link.active %}active{% endif %}">
+         {{ link.title }}
+        </a>
+
+      </li>
+
+    {% endfor %}
+  </ul>
+</nav>
+
+
+
+{% schema %}
+
+{
+  "name": "Menu de Navegação",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Selecionar Menu",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Menu de Navegação"
+    }
+  ]
+}
+
+{% endschema %}

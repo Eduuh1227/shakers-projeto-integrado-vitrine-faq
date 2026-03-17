@@ -1,0 +1,132 @@
+.hero-slider-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  height: 600px;
+}
+
+.container-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+}
+
+.banner-title {
+  font-size: 3.5rem !important;
+  color: #fff !important;
+  margin-bottom: 10px !important;
+  text-transform: uppercase;
+}
+
+.banner-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.produto-float-img {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  width: 300px;
+  z-index: 11;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+
+@media screen and (max-width: 768px) {
+
+  .swiper {
+    height: 500px; 
+  }
+
+  
+  .container-banner {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    padding-top: 50px;
+  }
+
+  .banner-content {
+    max-width: 90%; 
+    padding: 0 20px;
+    z-index: 12; 
+  }
+
+  
+  .banner-title {
+    font-size: 2.2rem !important; 
+    margin-bottom: 5px !important;
+  }
+
+ 
+  .produto-float-img {
+    position: relative; 
+    right: auto;
+    bottom: auto;
+    width: 200px; 
+    margin: 20px auto 0; 
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  }
+
+  
+  .banner-button {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    width: 80%; 
+    max-width: 250px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .swiper {
+    height: 450px;
+  }
+  
+  .banner-title {
+    font-size: 1.8rem !important;
+  }
+
+  .produto-float-img {
+    width: 160px;
+  }
+}

@@ -1,0 +1,93 @@
+{{ 'main-product.css' | asset_url | stylesheet_tag }}
+<script>window.productVariants = {{ product.variants | json }};</script>
+
+<script src="{{ 'main-product.js' | asset_url }}" defer="defer"></script>
+
+{% assign current = product.selected_or_first_available_variant %}
+
+<section class="main-product-info">
+
+  <div class="product-container">
+    
+    <div class="product-gallery">
+
+      <img id="MainProductImage" src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" class="main-img">
+      
+      {% if product.images.size > 1 %}
+
+        <div class="product-thumbnails">
+
+          {% for img in product.images %}
+
+            <img src="{{ img | image_url: width: 150 }}" alt="{{ img.alt }}" class="thumb-img" onclick="document.getElementById('MainProductImage').src='{{ img | image_url: width: 800 }}'">
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    
+    <div class="product-content-details">
+
+      <h1 class="product-title">{{ product.title }}</h1>
+
+      <div class="product-price-container">
+        <span class="price-main">{{ current.price | money }}</span>
+        
+        <span class="price-compare">
+
+          {% if current.compare_at_price > current.price %}{{ current.compare_at_price | money }}{% endif %}
+
+        </span>
+
+        {% if current.compare_at_price > current.price %}
+
+          <span class="badge-discount">OFERTA</span>
+
+        {% endif %}
+      </div>
+
+      <div class="product-description rte">{{ product.description }}</div>
+
+      {% unless product.has_only_default_variant %}
+
+        <div class="product-variants">
+
+          {% for option in product.options_with_values %}
+
+            <div class="variant-options">
+              {% for value in option.values %}
+
+                <input type="radio" id="{{ option.name }}-{{ value }}" name="{{ option.name }}" value="{{ value | escape }}" 
+
+                       {% if option.selected_value == value %}checked{% endif %} class="variant-input">
+
+                <label for="{{ option.name }}-{{ value }}" class="variant-button">{{ value }}</label>
+
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endunless %}
+
+      <input type="hidden" name="id" id="product-variant-id" value="{{ current.id }}">
+
+      <button type="button" id="AddToCart-Button" class="btn-add-to-cart" {% unless current.available %}disabled{% endunless %}>
+
+        <span class="button-text">{% if current.available %}ADICIONAR AO CARRINHO{% else %}ESGOTADO{% endif %}</span>
+
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+
+{ "name": "Informações do Produto", 
+
+"presets": [
+    { 
+        "name": "Informações do Produto" 
+    }
+  ]
+ }
+{% endschema %}

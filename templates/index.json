@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "header_navigation_x8Pz6x": {
+      "type": "header-navigation",
+      "name": "Menu de Navegação",
+      "settings": {
+        "menu": "main-menu"
+      }
+    },
+    "hero": {
+      "type": "hero-slider",
+      "settings": {
+        "product": "serum-corporal-ouro",
+        "hero_title": "LoGold",
+        "hero_subtitle": "Sinta a suavidade de uma pele profundamente hidratada. Nossa fórmula exclusiva combina rápida absorção com uma fragrância envolvente que dura o dia todo.",
+        "button_text": "SAIBA MAIS"
+      }
+    },
+    "products": {
+      "type": "collection-product-list",
+      "settings": {
+        "title": "Loções",
+        "main_product": "",
+        "all_collections": "locoes"
+      }
+    },
+    "cta": {
+      "type": "final-cta",
+      "settings": {
+        "texto_botao": "VEJA NOSSO PRODUTO DESTAQUE",
+        "link_produto": "serum-corporal-ouro"
+      }
+    }
+  },
+  "order": [
+    "header_navigation_x8Pz6x",
+    "hero",
+    "products",
+    "cta"
+  ]
+}

@@ -1,0 +1,88 @@
+ {{ 'collection-product-list.css' | asset_url | stylesheet_tag }}
+ 
+ <section>
+        <hr>
+
+    {% assign featured_product = section.settings.main_product %}
+
+    {% if featured_product != blank %}
+      
+        <div class="featured-product">
+
+        <h2>{{ featured_product.title }}</h2> 
+        <p class="price">{{ featured_product.price | money }}</p> 
+        <img src="{{ featured_product.featured_image | img_url: 'medium' }}" alt="{{ featured_product.title }}"> 
+        <a href="{{ featured_product.url }}" class="btn">Ver produto</a> 
+
+    </div>
+    {% endif %}
+
+<hr>
+
+
+
+<div class="collection-list">
+
+  {% assign selected_collection = section.settings.all_collections %}
+
+  {% if selected_collection != blank %}
+
+    <div class="products-grid">
+
+      {% for product in selected_collection.products %}
+
+        <div class="product-card">
+          <img 
+            src="{{ product.featured_image | image_url: width: 400 }}" 
+            alt="{{ product.title }}">
+
+          <h3>{{ product.title }}</h3>
+          <p class="price">{{ product.price | money }}</p>
+
+          <a class="btn" href="{{ product.url }}">
+            Comprar
+          </a>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  {% endif %}
+
+</div>
+  
+    </section>
+
+
+{% schema %}
+{
+    "name": "product-list",
+    "settings": [
+
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Teste",
+            "default": "Loções"
+        },
+
+        {
+            "type": "product",
+            "id": "main_product",
+            "label": "Produto Principal"
+        },
+            {
+                "type": "collection",
+                "id": "all_collections",
+                "label": "Loções"
+            }
+        ],
+        "presets": [
+            {
+                "name": "lotion-lp"
+            }
+        ]
+}
+{% endschema %}
+
