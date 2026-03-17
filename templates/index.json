@@ -9,6 +9,13 @@
  */
 {
   "sections": {
+    "header_navigation_x8Pz6x": {
+      "type": "header-navigation",
+      "name": "Menu de Navegação",
+      "settings": {
+        "menu": "main-menu"
+      }
+    },
     "hero": {
       "type": "hero-slider",
       "settings": {
@@ -29,15 +36,8 @@
     "cta": {
       "type": "final-cta",
       "settings": {
-        "texto_botao": "Ver produto",
+        "texto_botao": "VEJA NOSSO PRODUTO DESTAQUE",
         "link_produto": "serum-corporal-ouro"
-      }
-    },
-    "header_navigation_x8Pz6x": {
-      "type": "header-navigation",
-      "name": "Menu de Navegação",
-      "settings": {
-        "menu": "main-menu"
       }
     }
   },
