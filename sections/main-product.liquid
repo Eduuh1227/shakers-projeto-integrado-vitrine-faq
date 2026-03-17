@@ -1,4 +1,5 @@
 {{ 'main-product.css' | asset_url | stylesheet_tag }}
+<script>window.productVariants = {{ product.variants | json }};</script>
 
 <script src="{{ 'main-product.js' | asset_url }}" defer="defer"></script>
 
