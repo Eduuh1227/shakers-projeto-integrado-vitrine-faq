@@ -71,3 +71,62 @@
   z-index: 11;
   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
 }
+
+@media screen and (max-width: 768px) {
+
+  .swiper {
+    height: 500px; 
+  }
+
+  
+  .container-banner {
+    flex-direction: column; 
+    justify-content: flex-start; 
+    padding-top: 50px;
+  }
+
+  .banner-content {
+    max-width: 90%; 
+    padding: 0 20px;
+    z-index: 12; 
+  }
+
+  
+  .banner-title {
+    font-size: 2.2rem !important; 
+    margin-bottom: 5px !important;
+  }
+
+ 
+  .produto-float-img {
+    position: relative; 
+    right: auto;
+    bottom: auto;
+    width: 200px; 
+    margin: 20px auto 0; 
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+  }
+
+  
+  .banner-button {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    width: 80%; 
+    max-width: 250px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .swiper {
+    height: 450px;
+  }
+  
+  .banner-title {
+    font-size: 1.8rem !important;
+  }
+
+  .produto-float-img {
+    width: 160px;
+  }
+}
